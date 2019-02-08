@@ -1,0 +1,1 @@
+const CLICKER_CONFIG = '{ "name":"Tomato Clicker", "version":"0.0.1-Pre-Alpha" }';
