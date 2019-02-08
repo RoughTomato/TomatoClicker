@@ -8,13 +8,10 @@ var autoSave;
 (function() {
     updateTimer = setInterval(onUpdate, rate);
     autoSave = setInterval(saveCookie, 900000);
-    getCookie();
 })();
 
 window.onload = function() {
-    console.log(score + ";" + clickWorth + ";" + automatedClickRate + ";" + rate + ";")
-  //  getCookie();
-    score = bigInt();
+    getCookie();
     changeTitle();
 };
 
