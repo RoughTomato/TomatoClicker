@@ -1,0 +1,24 @@
+.tomato {
+    background:url(../img/tomato.png) no-repeat;
+    cursor:pointer;
+    border:none;
+    width:239px;
+    height:211px;
+}
+
+.tomato:hover {
+    opacity: 0.8;
+}
+
+.tomatoClick{
+    background: url(../img/click.png) no-repeat;
+    position: absolute;
+    opacity: 1;
+    visibility: hidden;
+    width: 28px;
+    height: 28px;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -ms-transition: opacity 0.2s ease-in-out;
+    -o-transition: opacity 0.2s ease-in-out;
+}

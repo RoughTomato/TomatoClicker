@@ -3,14 +3,17 @@
     <head>
         <meta charset="utf-8"/>
         <title>Tomato Clicker</title>
+        <link rel="stylesheet" href="style/main.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script type='text/javascript' src="https://peterolson.github.io/BigInteger.js/BigInteger.min.js"></script>
         <script type='text/javascript' src="js/config/config.js"></script>
         <script type='text/javascript' src="js/bonuses.js"></script>
         <script type='text/javascript' src="js/main.js"></script>
     </head>
     <body>
+        <div id='clickTomato' class="tomatoClick"></div>
         <div id='score'>Score : <span id='clicks'>0</div></div>
-        <button id='pointButton' type="button" onclick="clickFunction()">click!</button>
+        <button class='tomato' id='pointButton' type="button" onclick="clickFunction()"></button>
 
 
         <div id='cookieInfo'>This website uses cookies. Need to inform because of European Union.
