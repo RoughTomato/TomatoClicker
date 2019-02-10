@@ -1,6 +1,6 @@
 var score;
 var clickWorth = 1;
-var automatedClickRate = 0.2;
+var automatedClickRate = 0.0;
 var rate = 1000;
 var updateTimer;
 var autoSave;
@@ -9,31 +9,14 @@ var mousePos;
 (function() {
     document.onmousemove = handleMouseMove;
     updateTimer = setInterval(onUpdate, rate);
-    autoSave = setInterval(saveCookie, 900000);
+    autoSave = setInterval(saves.saveCookie, 900000);
 })();
 
 window.onload = function() {
-    getCookie();
+    saves.getCookie();
+    generateBonusButtons();
     changeTitle();
 };
-
-function getCookie() {
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(',');
-    addScore(ca[0].split('=')[1]);
-    clickWorth = ca[1];
-    automatedClickRate = ca[2];
-    rate = ca[3];
-    console.log(score + ";" + clickWorth + ";" + automatedClickRate + ";" + rate + ";")
-}
-
-function saveCookie() {
-  var d = new Date();
-  d.setTime(d.getTime() + (5*24*60*60*1000));
-  var expires = "expires="+ d.toUTCString();
-  document.cookie = "tomatoclicker=" + score + "," + clickWorth + ","
-                    + automatedClickRate + "," + rate + "," + expires + ";";
-}
 
 function changeTitle() {
     let cf = JSON.parse(CLICKER_CONFIG);
@@ -50,7 +33,6 @@ function clickAnimation() {
         "left": mousePos.x-14 + "px",
         "width":"28px",
         "height":"28px",
-
     });
     $('#clickTomato'+clicks).fadeOut(800);
     setTimeout(deleteClickElement, 1000, "#clickTomato"+clicks);
@@ -72,7 +54,7 @@ function clickFunction() {
     score = bigInt(score).add(clickWorth);
     document.getElementById("clicks").innerText = score.toString();
     clickAnimation();
-    saveCookie();//parseBonuses();
+    saves.saveCookie();
 }
 
 function onUpdate() {
@@ -110,8 +92,6 @@ function handleMouseMove(event) {
         y: event.pageY
     };
 }
-
-
 
 function addIntervalRate() {
     rate = 1000 / automatedClickRate;
