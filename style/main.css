@@ -1,9 +1,20 @@
+button, button:active, button:hover, button:focus {
+    border:0px solid transparent;
+    outline: none;
+}
+
 .tomato {
     background:url(../img/tomato.png) no-repeat;
+    border-radius: 70%;
     cursor:pointer;
-    border:none;
-    width:239px;
+    border:1px solid transparent;
+    width:241px;
     height:211px;
+}
+
+.tomato:active, .tomato:hover, .tomato:focus {
+    border:0px solid transparent;
+    outline: none;
 }
 
 .tomato:hover {
