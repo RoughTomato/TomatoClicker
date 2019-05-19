@@ -1,0 +1,51 @@
+.App {
+  text-align: center;
+}
+
+button, button:active, button:hover, button:focus {
+  border:0px solid transparent;
+  /* pointer-events: none; */
+  outline: none;
+}
+
+.tomato {
+  background:url(../img/tomato.png) no-repeat;
+  border-radius: 70%;
+  cursor:pointer;
+  border:1px solid transparent;
+  width:241px;
+  height:211px;
+}
+
+.tomato:active, .tomato:hover, .tomato:focus {
+  border:0px solid transparent;
+  outline: none;
+}
+
+.tomato:hover {
+  opacity: 0.8;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
