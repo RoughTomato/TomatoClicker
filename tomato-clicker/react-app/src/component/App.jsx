@@ -1,30 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Nav from './Nav';
 import './App.css';
 
 export default class App extends React.Component {
   constructor() {
-  	super();
+    super();
     this.state = {
-      tomatos: 0
+      tomatoes: 0,
     };
-    
+
     this.addTomato = this.addTomato.bind(this);
     setInterval(this.addTomato, 1000);
   }
-  
+
   addTomato() {
     this.setState(state => ({
-      tomatos: state.tomatos + 1
+      tomatoes: state.tomatoes + 1,
     }));
   }
 
   render() {
     return (
       <div className="App">
-      <div>You have {this.state.tomatos} 🍅.</div>
+        <Nav tomatoes={this.state.tomatoes} />
         <header className="App-header">
-          <button class="tomato" onClick={this.addTomato}></button>
+          <button type="button" className="tomato" onClick={this.addTomato} />
         </header>
       </div>
     );
